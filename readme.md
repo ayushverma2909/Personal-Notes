@@ -4,7 +4,12 @@ A full-stack Notes application built with **Node.js**, **Express**, **Supabase**
 
 <img src="./public/assets/homepage.png" />
 <img src="./public/assets/signup.png" />
+
+After signing in go to login and enter your email and password and click on login button and enjoy writing your notes.
+
 <img src="./public/assets/mainpage.png" />
+
+
 ---
 
 Watch, create, and keep your own personal notes — enjoy using myNote at:
