@@ -41,6 +41,6 @@ Watch, create, and keep your own personal notes — enjoy using myNote at:
 
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/your-username/supabase-notes-app.git
+   (https://github.com/ayushverma2909/Personal-Notes.git)
    cd supabase-notes-app
    npm i
