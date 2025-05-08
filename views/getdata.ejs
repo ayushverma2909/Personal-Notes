@@ -1,36 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="./../getdata.css" />
-  <title>My Notes</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./../getdata.css" />
+    <title>My Notes</title>
+  </head>
+  <body>
+    <h1 class="header">
+      Welcome <%= username.charAt(0).toUpperCase() + username.slice(1) %>
+    </h1>
+    <div class="handlesession">
+      <a href="/authuser/add">
+        <button class="create-post-btn">Create New Post</button>
+      </a>
+      <a href="/logout">
+        <button class="create-post-btn logout">Logout</button>
+      </a>
+      
+    </div>
 
-  <h1 class="header">Welcome <%= username.charAt(0).toUpperCase() + username.slice(1) %></h1>
-  <div class="handlesession">
-    <a href="/authuser/add">
-      <button class="create-post-btn">Create New Post</button>
-    </a>
-    <a href="/logout">
-      <button class="create-post-btn logout">Logout</button>
-    </a>
-  </div>
+    <div class="notes-container">
+      <% if (locals.data && data.length > 0) { %> <% data.forEach(note => { %>
+      <div class="note-card">
+        <h1 class="note-title"><%= note.title %></h1>
+        <p class="note-meta">
+          By <strong><%= note.username %></strong> on <%= new
+          Date(note.created_at).toLocaleDateString() %> at <%= (() => { const
+          date = new Date(note.created_at); let hours = date.getHours(); const
+          minutes = ('0' + date.getMinutes()).slice(-2); const period = hours >=
+          12 ? 'PM' : 'AM'; hours = hours % 12; hours = hours ? hours : 12;
+          return `${hours}:${minutes} ${period}`; })() %>
+        </p>
+        
+        <p class="note-content"><%= note.content %></p>
 
-  <div class="notes-container">
-    <% if (locals.data && data.length > 0) { %>
-      <% data.forEach(note => { %>
-        <div class="note-card">
-          <h2 class="note-title"><%= note.title %></h2>
-          <p class="note-meta">By <strong><%= note.username %></strong> on <%= new Date(note.created_at).toLocaleDateString() %></p>
-          <p class="note-content"><%= note.content %></p>
-        </div>
-      <% }) %>
-    <% } else { %>
+        <!-- <form action="/authuser/delete" method="POST" class="delete-form">
+          <button type="submit" class="delete-btn create-post-btn">Delete</button>
+        </form> -->
+        
+        
+      </div>
+      <% }) %> <% } else { %>
       <p class="empty-message">No notes available.</p>
-    <% } %>
-  </div>
-  
-</body>
+      <% } %>
+    </div>
+    
+  </body>
 </html>

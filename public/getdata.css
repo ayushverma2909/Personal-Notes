@@ -1,3 +1,7 @@
+body{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
 .notes-container {
     column-count: 3;
     column-gap: 1.5rem;
@@ -32,17 +36,7 @@
     box-sizing: border-box;
   }
   
-  .note-card h2 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
   
-  .note-card p {
-    font-size: 1rem;
-    line-height: 1.5;
-    word-wrap: break-word;
-    white-space: pre-wrap;
-  }
 
   .handlesession{
     display: flex;
@@ -55,5 +49,23 @@
     position: absolute;
     right: 0px;
     top: -67px
+  }
+
+  .note-meta{
+    font-family: cursive;
+  }
+
+  .note-content{
+    font-size: 1.5rem;
+  }
+
+  .delete-form{
+    display: flex;
+    justify-content: end;
+    margin-right: 15px;
+  }
+
+  .delete-btn{
+    background-color: red;
   }
   

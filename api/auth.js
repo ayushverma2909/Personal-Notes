@@ -26,6 +26,10 @@ router.get("/", (req, res) => {
   res.render("auth.ejs");
 });
 
+// router.post("/delete", (req, res) => {
+  
+// })
+
 router.post("/signup", async (req, res) => {
   const { email, password, username } = req.body;
 
