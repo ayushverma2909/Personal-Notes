@@ -7,7 +7,7 @@ import passport from 'passport'
 import dotenv from 'dotenv'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import serverless from 'serverless-http'
+
 
 dotenv.config()
 
@@ -50,4 +50,4 @@ app.get("/logout", (req, res) => {
 
 app.post("/submit_note", postNotes)
 
-export const handler = serverless(app)
+export default app
