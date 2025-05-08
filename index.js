@@ -5,9 +5,14 @@ import postNotes from './post_notes.js';
 import session from 'express-session';
 import passport from 'passport';
 import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import serverless from 'serverless-http';
 
 dotenv.config();
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 
@@ -23,7 +28,7 @@ app.use(
   })
 );
 
-app.use(express.static('/public'));
+app.use(express.static(path.join(__dirname, '../public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -43,4 +48,5 @@ app.get("/logout", (req, res) => {
 
 app.post("/submit_note", postNotes);
 
-export default app
+// Export serverless function
+export const handler = serverless(app);
