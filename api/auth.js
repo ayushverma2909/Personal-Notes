@@ -58,10 +58,24 @@ router.post("/signup", async (req, res) => {
   }
 });
 
-router.post('/login', passport.authenticate('local', {
-    successRedirect: '/authuser/getnotes',
-    failureRedirect: '/authuser',
-}))
+router.post("/login", (req, res, next) => {
+  passport.authenticate("local", (err, user, info) => {
+    if (err) {
+      return res.status(500).send("Internal Server Error");
+    }
+    if (!user) {
+      // Custom message if login fails
+      return res.status(401).send(info.message);
+    }
+    req.logIn(user, (err) => {
+      if (err) {
+        return res.status(500).send("Login Error");
+      }
+      return res.redirect("/authuser/getnotes");
+    });
+  })(req, res, next);
+});
+
 
 router.get("/getnotes", async (req, res) => {
     if (req.isAuthenticated()) {
@@ -124,12 +138,12 @@ passport.use(
             if (valid) {
               return cb(null, user);
             } else {
-              return cb(null, false);
+              return cb(null, false, { message: "Incorrect password" });
             }
           }
         });
       } else {
-        return cb(null, false)
+        return cb(null, false, {message: "Email does not exist"})
       }
     } catch (error) {
       console.error("Login Error:", error);
