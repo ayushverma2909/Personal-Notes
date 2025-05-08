@@ -2,6 +2,13 @@ body{
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
+.header {
+  color: #34495e;
+  text-align: center;
+  margin: 1rem 0;
+  font-size: 2.2rem;
+}
+
 .notes-container {
     column-count: 3;
     column-gap: 1.5rem;
@@ -9,18 +16,17 @@ body{
 }
 
 .create-post-btn {
-  background-color: #4CAF50;
+  background-color: #27ae60;
   color: white;
   padding: 10px 20px;
   font-size: 16px;
   border: none;
   cursor: pointer;
-  margin-bottom: 20px;
   border-radius: 5px;
 }
 
 .create-post-btn:hover {
-  background-color: #45a049;
+  background-color: #219150;
 }
 
   
@@ -45,17 +51,26 @@ body{
     margin: 0 20px;
   }
 
-  .logout{
-    position: absolute;
-    right: 0px;
-    top: -67px
+  .logout {
+    background-color: #c0392b;
+    color: white;
+    margin-left: 1rem;
+  }
+  .logout:hover {
+    background-color: #a93226;
+  }
+
+  .note-title{
+    color: #2c3e50;
   }
 
   .note-meta{
     font-family: cursive;
+    color: #7f8c8d;
   }
 
   .note-content{
+    color: #2d3436;
     font-size: 1.5rem;
   }
 
@@ -67,5 +82,27 @@ body{
 
   .delete-btn{
     background-color: red;
+  }
+  
+  @media (max-width: 768px) {
+    .notes-container {
+      column-count: 1;
+      padding: 1rem;
+    }
+  
+    .note-card {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  
+    .handlesession {
+      align-items: stretch;
+      gap: 10px;
+    }
+  
+    .logout {
+      position: static;
+      align-self: flex-end;
+    }
   }
   
