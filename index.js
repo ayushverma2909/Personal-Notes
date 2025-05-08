@@ -1,25 +1,21 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import authRoutes from './auth.js';
-import postNotes from './post_notes.js';
+import authRoutes from './api/auth.js';
+import postNotes from './api/post_notes.js';
 import session from 'express-session';
 import passport from 'passport';
 import dotenv from 'dotenv';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import serverless from 'serverless-http';
 
 dotenv.config();
+const port = 3000
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 const app = express();
 
 
 app.use(
   session({
-    secret: process.env.SESSION_SECRET || 'default_secret',
+    secret: process.env.SESSION_SECRET ,
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -28,7 +24,7 @@ app.use(
   })
 );
 
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -47,6 +43,6 @@ app.get("/logout", (req, res) => {
 });
 
 app.post("/submit_note", postNotes);
-
-// Export serverless function
-export const handler = serverless(app);
+app.listen(port, () => {
+  console.log(`Server is runnin on port ${port}`)
+})
