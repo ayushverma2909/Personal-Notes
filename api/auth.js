@@ -3,7 +3,6 @@ import bcrypt from "bcrypt";
 import { createClient } from "@supabase/supabase-js";
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
-import session from "express-session";
 import passport from "passport";
 import { Strategy } from "passport-local";
 
