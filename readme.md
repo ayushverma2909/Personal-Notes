@@ -2,6 +2,9 @@
 
 A full-stack Notes application built with **Node.js**, **Express**, **Supabase**, and **EJS**. Authenticated users can sign up, log in, create and view personal notes, and delete them securely.
 
+<img src="./public/assets/homepage.png" />
+<img src="./public/assets/signup.png" />
+<img src="./public/assets/mainpage.png" />
 ---
 
 Watch, create, and keep your own personal notes — enjoy using myNote at:
