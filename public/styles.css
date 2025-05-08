@@ -1,46 +1,38 @@
+/* Ensure box scales on small screens */
 .box {
-    width: 400px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .item {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  
-  .item input[type="text"],
-  .item textarea {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    resize: vertical;
-    width: 100%;
-  }
-  
-  .item input[type="text"]:focus,
-  .item textarea:focus {
-    border-color: #007bff;
-    outline: none;
-  }
-  
-  button.add {
-    padding: 10px;
-    font-size: 18px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-  
-  button.add:hover {
-    background-color: #0056b3;
-  }
-  
+  width: 90%;
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Input fields remain full-width and clean */
+.item input[type="text"],
+.item textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  resize: vertical;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Add mobile-safe button styles */
+button.add {
+  padding: 12px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button.add:hover {
+  background-color: #0056b3;
+}
