@@ -1,0 +1,59 @@
+.notes-container {
+    column-count: 3;
+    column-gap: 1.5rem;
+    padding: 2rem;
+}
+
+.create-post-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.create-post-btn:hover {
+  background-color: #45a049;
+}
+
+  
+  .note-card {
+    display: inline-block;
+    width: 100%; /* critical: let browser handle width inside column */
+    margin-bottom: 1.5rem;
+    background: #dfd9d9;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    break-inside: avoid;
+    box-sizing: border-box;
+  }
+  
+  .note-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .note-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+  }
+
+  .handlesession{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 0 20px;
+  }
+
+  .logout{
+    position: absolute;
+    right: 0px;
+    top: -67px
+  }
+  
