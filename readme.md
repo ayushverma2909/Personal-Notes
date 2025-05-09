@@ -2,6 +2,14 @@
 
 A full-stack Notes application built with **Node.js**, **Express**, **Supabase**, and **EJS**. Authenticated users can sign up, log in, create and view personal notes, and delete them securely.
 
+<img src="./public/assets/homepage.png" />
+<img src="./public/assets/signup.png" />
+
+After signing in go to login and enter your email and password and click on login button and enjoy writing your notes.
+
+<img src="./public/assets/mainpage.png" />
+
+
 ---
 
 Watch, create, and keep your own personal notes — enjoy using myNote at:
@@ -41,6 +49,6 @@ Watch, create, and keep your own personal notes — enjoy using myNote at:
 
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/your-username/supabase-notes-app.git
+   https://github.com/ayushverma2909/Personal-Notes.git
    cd supabase-notes-app
    npm i
