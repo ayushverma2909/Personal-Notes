@@ -35,11 +35,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
+
+
+
+
 app.use("/authuser", authRoutes);
 
 app.get("/", (req, res) => {
   res.render("home");
 });
+
 
 app.get("/logout", (req, res) => {
   req.logout(function (err) {
